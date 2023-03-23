@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "605686750856",
+    "project_id": "abhayam-523e4",
+    "storage_bucket": "abhayam-523e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605686750856:android:cb64819979829222c2093d",
+        "android_client_info": {
+          "package_name": "com.example.abhayam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605686750856-qhcsd8ficg3vd1ir39tcvl950qi5npft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYUjDbFzazuV61XVXr9g-RjdR7RNRH2zU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "605686750856-qhcsd8ficg3vd1ir39tcvl950qi5npft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

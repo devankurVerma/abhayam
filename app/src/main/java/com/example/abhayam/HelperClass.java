@@ -1,0 +1,50 @@
+package com.example.abhayam;
+
+public class HelperClass {
+    String name, email, password, parentPhNo;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getParentPhNo() {
+        return parentPhNo;
+    }
+
+    public void setParentPhNo(String parentPhNo) {
+        this.parentPhNo = parentPhNo;
+    }
+
+    public HelperClass(String name, String email, String password, String parentPhNo) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.parentPhNo = parentPhNo;
+    }
+
+    public HelperClass() {
+    }
+
+
+
+}
