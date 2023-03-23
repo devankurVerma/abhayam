@@ -1,7 +1,7 @@
 package com.example.abhayam;
 
 public class HelperClass {
-    String name, email, password, parentPhNo;
+    String name, username, password, parentPhNo;
 
     public String getName() {
         return name;
@@ -11,12 +11,12 @@ public class HelperClass {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.username = email;
     }
 
     public String getPassword() {
@@ -27,17 +27,10 @@ public class HelperClass {
         this.password = password;
     }
 
-    public String getParentPhNo() {
-        return parentPhNo;
-    }
 
-    public void setParentPhNo(String parentPhNo) {
-        this.parentPhNo = parentPhNo;
-    }
-
-    public HelperClass(String name, String email, String password, String parentPhNo) {
+    public HelperClass(String name, String username, String password, String parentPhNo) {
         this.name = name;
-        this.email = email;
+        this.username = username;
         this.password = password;
         this.parentPhNo = parentPhNo;
     }

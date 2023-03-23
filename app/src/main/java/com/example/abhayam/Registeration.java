@@ -14,7 +14,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Registeration extends AppCompatActivity {
-    EditText regiName , regiEmail , regiParentPhNo , regiPassword;
+    EditText regiName , regiusername , regiParentPhNo , regiPassword;
     TextView loginRedirectText;
     Button registerNow;
     FirebaseDatabase database;
@@ -26,7 +26,7 @@ public class Registeration extends AppCompatActivity {
         setContentView(R.layout.activity_registeration);
 
         regiName = findViewById(R.id.regi_Name);
-        regiEmail = findViewById(R.id.regi_Email);
+        regiusername = findViewById(R.id.regi_Email);
         regiParentPhNo = findViewById(R.id.regi_PhoneNumber);
         regiPassword = findViewById(R.id.regi_Password);
         loginRedirectText = findViewById(R.id.loginRedirectText);
@@ -40,11 +40,11 @@ public class Registeration extends AppCompatActivity {
                 reference = database.getReference("users");
 
                 String name = regiName.getText().toString();
-                String email = regiEmail.getText().toString();
+                String username = regiusername.getText().toString();
                 String ParentPhNo = regiParentPhNo.getText().toString();
                 String Password = regiPassword.getText().toString();
 
-                HelperClass helperClass = new HelperClass(name,email,ParentPhNo,Password);
+                HelperClass helperClass = new HelperClass(name,username,Password,ParentPhNo);
                 reference.child(ParentPhNo).setValue(helperClass);
 
                 Toast.makeText(Registeration.this, "your registration is completed", Toast.LENGTH_SHORT).show();

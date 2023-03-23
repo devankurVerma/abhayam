@@ -34,14 +34,15 @@
                 android:textColor="#01273E"/>
 
             <EditText
+                android:id="@+id/logi_Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/logi_Email"
                 android:layout_marginTop="40dp"
-                android:padding="8dp"
-                android:hint="Email"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:hint="user name"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:textColor="@color/black" />
 
             <EditText
                 android:layout_width="match_parent"

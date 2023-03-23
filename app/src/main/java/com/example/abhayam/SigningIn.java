@@ -89,7 +89,7 @@ public class SigningIn extends AppCompatActivity {
         String UserPassword = logiPassword.getText().toString().trim();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-        Query checkUserDatabase = reference.orderByChild("email").equalTo(UserEmail);
+        Query checkUserDatabase = reference.orderByChild("username").equalTo(UserEmail);
 
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

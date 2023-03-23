@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:drawablePadding="8dp"
-                android:hint="Email"
+                android:hint="user name"
                 android:minHeight="48dp"
                 android:padding="8dp"
                 android:textColor="@color/black" />
