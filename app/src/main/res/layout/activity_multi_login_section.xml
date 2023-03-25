@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#7EEDB9"
+    tools:context=".MultiLoginSection">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select User Type"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="#015348"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="90dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userStudent"
+        android:text="Student"
+        android:background="#00B8D4"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:padding="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/userParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#00B8D4"
+        android:text="Parent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"/>
+
+
+</LinearLayout>
