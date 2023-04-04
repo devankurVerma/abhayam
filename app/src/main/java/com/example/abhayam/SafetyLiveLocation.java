@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -28,6 +29,9 @@ public class SafetyLiveLocation extends FragmentActivity implements OnMapReadyCa
     public String triggerLatitude;
     public String triggerLongitude;
 
+    public Double Lat;
+    public Double Longi;
+
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference = database.getReference();
@@ -35,6 +39,13 @@ public class SafetyLiveLocation extends FragmentActivity implements OnMapReadyCa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+//        Intent isActivity = getIntent();
+//        triggerPhNo = isActivity.getStringExtra("thisIsPassingValueBtwHmASl");
+
+        reciveDataLocation();
 
         binding = ActivitySafetyLiveLocationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -44,21 +55,9 @@ public class SafetyLiveLocation extends FragmentActivity implements OnMapReadyCa
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        Intent isActivity = getIntent();
-        triggerPhNo = isActivity.getStringExtra("thisIsLocationValue");
 
-        reference.child("users").child(triggerPhNo).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                triggerLatitude = snapshot.child("latitude").getValue(String.class);
-                triggerLongitude = snapshot.child("longitude").getValue(String.class);
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
     }
 
     /**
@@ -72,15 +71,38 @@ public class SafetyLiveLocation extends FragmentActivity implements OnMapReadyCa
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
-        Double Lat = Double.parseDouble(triggerLatitude);
-        Double Long = Double.parseDouble(triggerLongitude);
+//        Intent isActivity = getIntent();
+//        triggerPhNo = isActivity.getStringExtra("thisIsPassingValueBtwHmASl");
+        Lat = Double.parseDouble(triggerLatitude);
+        Longi = Double.parseDouble(triggerLongitude);
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(Lat,Long);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(Lat,Longi);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("SOS location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+    public void reciveDataLocation(){
+
+        Intent isActivity = getIntent();
+        triggerPhNo = isActivity.getStringExtra("thisIsPassingValueBtwHmASl");
+        reference.child("users").child(triggerPhNo).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                triggerLatitude = snapshot.child("latitude").getValue(String.class);
+                triggerLongitude = snapshot.child("longitude").getValue(String.class);
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(SafetyLiveLocation.this, "your data is not fetched", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }
 

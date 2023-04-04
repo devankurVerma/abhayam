@@ -37,6 +37,7 @@ public class GuardianSection extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),HomePageGard.class);
                 intent.putExtra("projectMadeByAnkur", message);
                 startActivity(intent);
+
             }
         });
 

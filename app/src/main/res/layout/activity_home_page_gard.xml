@@ -82,6 +82,19 @@
 
         </TextView>
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sosReciver"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="250dp"
+            android:text="SOS reciver"
+            android:background="#00B8D4"
+            android:textStyle="bold">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+
     </androidx.cardview.widget.CardView>
 
 

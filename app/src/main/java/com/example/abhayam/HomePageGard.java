@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +20,10 @@ import com.google.firebase.database.ValueEventListener;
 public class HomePageGard extends AppCompatActivity {
 
     public String fetchNumb;
+    public String TriggerInten;
     TextView chName, chLatitude, chLongitude;
+
+    Button sosCheckingBtn;
 
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -35,13 +40,26 @@ public class HomePageGard extends AppCompatActivity {
         Intent ofActivity = getIntent();
         fetchNumb = ofActivity.getStringExtra("projectMadeByAnkur");
 
-        Intent intent = new Intent(HomePageGard.this, SafetyLiveLocation.class);
-        intent.putExtra("thisIsLocationValue",fetchNumb );
+
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
 
         readingData();
+
+//        Intent intent = new Intent(HomePageGard.this, SafetyLiveLocation.class);
+//        intent.putExtra("thisIsPassingValueBtwHmASl", TriggerInten);
+
+        sosCheckingBtn = findViewById(R.id.sosReciver);
+
+        sosCheckingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sosAction = new Intent(HomePageGard.this,SafetyLiveLocation.class);
+                sosAction.putExtra("thisIsPassingValueBtwHmASl", TriggerInten);
+                startActivity(sosAction);
+            }
+        });
 
     }
 
@@ -57,6 +75,11 @@ public class HomePageGard extends AppCompatActivity {
 
                 String longitudeChild = snapshot.child("longitude").getValue(String.class);
                 chLongitude.setText(longitudeChild);
+
+                TriggerInten = snapshot.child("parentPhNo").getValue(String.class);
+
+
+
 
             }
 
