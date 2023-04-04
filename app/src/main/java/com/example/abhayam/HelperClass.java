@@ -3,6 +3,14 @@ package com.example.abhayam;
 public class HelperClass {
     String name, username, password, parentPhNo;
 
+    public String getParentPhNo() {
+        return parentPhNo;
+    }
+
+    public void setParentPhNo(String parentPhNo) {
+        this.parentPhNo = parentPhNo;
+    }
+
     public String getName() {
         return name;
     }
@@ -33,6 +41,8 @@ public class HelperClass {
         this.username = username;
         this.password = password;
         this.parentPhNo = parentPhNo;
+
+
     }
 
     public HelperClass() {

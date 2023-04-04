@@ -21,9 +21,11 @@ import java.util.Objects;
 
 public class SigningIn extends AppCompatActivity {
 
-    EditText logiEmail , logiPassword;
+    EditText logiEmail , logiPassword ,sosNumb;
     Button loginNow;
     TextView regiRedirectText;
+
+    public String mobiNumberParent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,11 @@ public class SigningIn extends AppCompatActivity {
         logiPassword = findViewById(R.id.logi_Password);
         regiRedirectText = findViewById(R.id.RegiRedirectText);
         loginNow = findViewById(R.id.logiButton);
+        sosNumb = findViewById(R.id.logi_sosNumbGuard);
+
+
+
+
 
         loginNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +94,7 @@ public class SigningIn extends AppCompatActivity {
     public void checkUser(){
         String UserEmail = logiEmail.getText().toString().trim();
         String UserPassword = logiPassword.getText().toString().trim();
+        mobiNumberParent = sosNumb.getText().toString();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
         Query checkUserDatabase = reference.orderByChild("username").equalTo(UserEmail);
@@ -102,6 +110,9 @@ public class SigningIn extends AppCompatActivity {
                     if (!Objects.equals(passwordFromDb,UserPassword)){
                         logiEmail.setError(null);
                         Intent intent = new Intent(SigningIn.this,MainActivity.class);
+
+                        intent.putExtra("Aumkar", mobiNumberParent);
+
                         startActivity(intent);
                     }else {
                         logiPassword.setError("invalid credentials");

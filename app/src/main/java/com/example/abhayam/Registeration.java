@@ -20,6 +20,7 @@ public class Registeration extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class Registeration extends AppCompatActivity {
         regiPassword = findViewById(R.id.regi_Password);
         loginRedirectText = findViewById(R.id.loginRedirectText);
         registerNow = findViewById(R.id.RegiButton);
+
 
         registerNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +52,7 @@ public class Registeration extends AppCompatActivity {
                 Toast.makeText(Registeration.this, "your registration is completed", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Registeration.this,SigningIn.class);
                 startActivity(intent);
+
             }
         });
 

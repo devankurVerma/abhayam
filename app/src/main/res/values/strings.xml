@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Abhayam</string>
+    <string name="title_activity_safety_live_location">SafetyLiveLocation</string>
 </resources>

@@ -34,7 +34,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="#00BFA5">
+                    android:background="#ffff"
+                    android:textSize="30sp">
 
                 </TextView>
             </androidx.cardview.widget.CardView>
@@ -43,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1in"
                 android:layout_margin="5dp"
-                android:background="#00C853"
+                android:background="#ffff"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="20dp">
 
@@ -52,7 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="#00BFA5">
+                    android:background="#ffff">
 
                 </TextView>
             </androidx.cardview.widget.CardView>
@@ -61,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1in"
                 android:layout_margin="5dp"
-                android:background="#00C853"
+                android:background="#ffff"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="20dp">
 
@@ -70,7 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="#00BFA5">
+                    android:background="#ffff">
 
                 </TextView>
             </androidx.cardview.widget.CardView>
@@ -79,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1in"
                 android:layout_margin="5dp"
-                android:background="#00C853"
+                android:background="#ffff"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="20dp">
 
@@ -88,7 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="#00BFA5">
+                    android:background="#ffff">
 
                 </TextView>
             </androidx.cardview.widget.CardView>
