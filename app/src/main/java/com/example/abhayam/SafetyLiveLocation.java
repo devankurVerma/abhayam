@@ -1,7 +1,9 @@
 package com.example.abhayam;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -11,11 +13,24 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.abhayam.databinding.ActivitySafetyLiveLocationBinding;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SafetyLiveLocation extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivitySafetyLiveLocationBinding binding;
+
+    public String triggerPhNo;
+    public String triggerLatitude;
+    public String triggerLongitude;
+
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference reference = database.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +43,22 @@ public class SafetyLiveLocation extends FragmentActivity implements OnMapReadyCa
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        Intent isActivity = getIntent();
+        triggerPhNo = isActivity.getStringExtra("thisIsLocationValue");
+
+        reference.child("users").child(triggerPhNo).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                triggerLatitude = snapshot.child("latitude").getValue(String.class);
+                triggerLongitude = snapshot.child("longitude").getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     /**
@@ -41,11 +72,18 @@ public class SafetyLiveLocation extends FragmentActivity implements OnMapReadyCa
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+        Double Lat = Double.parseDouble(triggerLatitude);
+        Double Long = Double.parseDouble(triggerLongitude);
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
+        LatLng sydney = new LatLng(Lat,Long);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }
+
+//reference.child("users").child(fetchNumb).addValueEventListener
+//String name = snapshot.child("name").getValue(String.class);
+//                chName.setText(name);

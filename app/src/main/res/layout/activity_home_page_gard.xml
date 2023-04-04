@@ -1,121 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7EF8C2"
+    android:orientation="vertical"
     tools:context=".HomePageGard">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never"
-        android:paddingTop="300dp"
-        android:scrollbars="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="250dp"
+        android:background="#ffff"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="25dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <TextView
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="1in"
-                android:layout_margin="5dp"
-                android:background="#00C853"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="20dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your child data"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginVertical="10dp"
+            android:textSize="30dp"
+            android:textColor="#00B8D4"
+            android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/dataStudent1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="#ffff"
-                    android:textSize="30sp">
+        <TextView
+            android:id="@+id/NameOfStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="55dp"
+            android:textColor="#070707"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
-                </TextView>
-            </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/latitudeOfStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="latitude"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="85dp"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="1in"
-                android:layout_margin="5dp"
-                android:background="#ffff"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="20dp">
+        <TextView
+            android:id="@+id/longitudeOfStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="longitude"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="115dp"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/dataStudent2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="#ffff">
 
-                </TextView>
-            </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="1in"
-                android:layout_margin="5dp"
-                android:background="#ffff"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="20dp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="330dp"
+        android:background="#ffff"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="25dp">
 
-                <TextView
-                    android:id="@+id/dataStudent3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="#ffff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUCCESSFULLY EXECUTED SOFTWARE"
+            android:textColor="#00B8D4"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:paddingHorizontal="25dp">
 
-                </TextView>
-            </androidx.cardview.widget.CardView>
+        </TextView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="1in"
-                android:layout_margin="5dp"
-                android:background="#ffff"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="20dp">
-
-                <TextView
-                    android:id="@+id/dataStudent4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="#ffff">
-
-                </TextView>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="1in"
-                android:layout_margin="5dp"
-                android:background="#00C853"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="20dp">
-
-                <TextView
-                    android:id="@+id/dataStudent5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="#00BFA5">
-
-                </TextView>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-    </ScrollView>
+    </androidx.cardview.widget.CardView>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

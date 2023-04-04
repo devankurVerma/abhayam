@@ -35,7 +35,7 @@ public class GuardianSection extends AppCompatActivity {
                 String message = guarPhoneNumber.getText().toString();
 
                 Intent intent = new Intent(getApplicationContext(),HomePageGard.class);
-                intent.putExtra("Message",message);
+                intent.putExtra("projectMadeByAnkur", message);
                 startActivity(intent);
             }
         });
